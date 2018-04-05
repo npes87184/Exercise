@@ -22,13 +22,14 @@ class Tree
 	public:
 		Tree();
 		~Tree();
-		unsigned int getHeight(METHOD method = METHOD_RECURSIVE);
-		void free(METHOD method = METHOD_RECURSIVE);
-		void preOrder(METHOD method = METHOD_RECURSIVE);
-		void inOrder(METHOD method = METHOD_RECURSIVE);
+		unsigned int getHeight();
+		void free();
+		void preOrder();
+		void inOrder();
 		virtual int insert(int val) = 0;
 	protected:
 		Node* _head = NULL;
+		METHOD _method = METHOD_RECURSIVE;
 };
 
 #endif

@@ -24,9 +24,9 @@ static unsigned int _getHeightRecursive(Node* node)
 		std::max(_getHeightRecursive(node->lChild), _getHeightRecursive(node->rChild)) + 1;
 }
 
-unsigned int Tree::getHeight(METHOD method)
+unsigned int Tree::getHeight()
 {
-	if (METHOD_RECURSIVE == method) {
+	if (METHOD_RECURSIVE == _method) {
 		return _getHeightRecursive(_head);
 	}
 	return 0;
@@ -45,9 +45,9 @@ static void _freeRecursive(Node* node)
 	return;
 }
 
-void Tree::free(METHOD method)
+void Tree::free()
 {
-	if (METHOD_RECURSIVE == method) {
+	if (METHOD_RECURSIVE == _method) {
 		_freeRecursive(_head);
 	}
 }
@@ -65,9 +65,9 @@ static void _preRecursive(Node* node)
 	return;
 }
 
-void Tree::preOrder(METHOD method)
+void Tree::preOrder()
 {
-	if (METHOD_RECURSIVE == method) {
+	if (METHOD_RECURSIVE == _method) {
 		_preRecursive(_head);
 		printf("\n");
 	}
@@ -86,9 +86,9 @@ static void _inRecursive(Node* node)
 	return;
 }
 
-void Tree::inOrder(METHOD method)
+void Tree::inOrder()
 {
-	if (METHOD_RECURSIVE == method) {
+	if (METHOD_RECURSIVE == _method) {
 		_inRecursive(_head);
 		printf("\n");
 	}
