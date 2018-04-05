@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <stack>
+#include <queue>
 
 #include "tree.h"
 
@@ -111,6 +112,38 @@ void Tree::postOrder()
 {
 	if (METHOD_RECURSIVE == _method) {
 		_postRecursive(_head);
+		printf("\n");
+	}
+}
+
+static void _levelIteration(Node* node)
+{
+	std::queue<Node*> q;
+
+	q.push(node);
+
+	while (!q.empty()) {
+		Node* tmp = q.front();
+		q.pop();
+
+		if (NULL == tmp) {
+			continue;
+		}
+
+		q.push(tmp->lChild);
+		q.push(tmp->rChild);
+
+		printf("%d ", tmp->val);
+	}
+
+	return;
+}
+
+void Tree::levelOrder()
+{
+	if (METHOD_RECURSIVE == _method) {
+	} else if (METHOD_ITERATION == _method) {
+		_levelIteration(_head);
 		printf("\n");
 	}
 }

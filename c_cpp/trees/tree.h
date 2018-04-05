@@ -22,11 +22,13 @@ class Tree
 	public:
 		Tree();
 		~Tree();
+		void setMethod(METHOD method) { _method = method; };
 		unsigned int getHeight();
 		void free();
 		void preOrder();
 		void inOrder();
 		void postOrder();
+		void levelOrder();
 		virtual int insert(int val) = 0;
 	protected:
 		Node* _head = NULL;

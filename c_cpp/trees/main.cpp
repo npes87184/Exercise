@@ -15,5 +15,8 @@ int main()
 	tree.postOrder();
 	printf("height = %d\n", tree.getHeight());
 
+	tree.setMethod(METHOD_ITERATION);
+	tree.levelOrder();
+
 	return 0;
 }
