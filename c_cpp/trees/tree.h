@@ -26,6 +26,7 @@ class Tree
 		void free();
 		void preOrder();
 		void inOrder();
+		void postOrder();
 		virtual int insert(int val) = 0;
 	protected:
 		Node* _head = NULL;

@@ -12,6 +12,7 @@ int main()
 
 	tree.preOrder();
 	tree.inOrder();
+	tree.postOrder();
 	printf("height = %d\n", tree.getHeight());
 
 	return 0;

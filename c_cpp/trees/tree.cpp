@@ -93,3 +93,24 @@ void Tree::inOrder()
 		printf("\n");
 	}
 }
+
+static void _postRecursive(Node* node)
+{
+	if (NULL == node) {
+		return;
+	}
+
+	_postRecursive(node->lChild);
+	_postRecursive(node->rChild);
+	printf("%d ", node->val);
+
+	return;
+}
+
+void Tree::postOrder()
+{
+	if (METHOD_RECURSIVE == _method) {
+		_postRecursive(_head);
+		printf("\n");
+	}
+}
